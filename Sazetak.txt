@@ -1,0 +1,6 @@
+TINF: NSK24
+
+izvorište: 1
+metoda entropijskog kodiranja: 1
+-||- zastitnog kod. : 1
+kanal: 1

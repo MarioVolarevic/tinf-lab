@@ -1,0 +1,31 @@
+﻿Build started 26.11.2010. 2:09:41.
+     1>Project "C:\FER2\V.semestar\TINF\Labos\TINF_lab\TINF_lab.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\TINF_lab.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(8): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(9): warning C4101: 'i' : unreferenced local variable
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(25): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(25): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(25): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(25): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(25): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(25): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\fer2\v.semestar\tinf\labos\tinf_lab\main.cpp(53): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(110) : see declaration of 'strcat'
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\FER2\V.semestar\TINF\Labos\TINF_lab\Debug\TINF_lab.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\TINF_lab.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\FER2\V.semestar\TINF\Labos\TINF_lab\Debug\TINF_lab.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\FER2\V.semestar\TINF\Labos\TINF_lab\Debug\TINF_lab.lib" /MACHINE:X86 Debug\main.obj
+         LINK : C:\FER2\V.semestar\TINF\Labos\TINF_lab\Debug\TINF_lab.exe not found or not built by the last incremental link; performing full link
+         TINF_lab.vcxproj -> C:\FER2\V.semestar\TINF\Labos\TINF_lab\Debug\TINF_lab.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\FER2\V.semestar\TINF\Labos\TINF_lab\Debug\TINF_lab.exe;#1" /manifest Debug\TINF_lab.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\TINF_lab.unsuccessfulbuild".
+         Touching "Debug\TINF_lab.lastbuildstate".
+     1>Done Building Project "C:\FER2\V.semestar\TINF\Labos\TINF_lab\TINF_lab.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.54
