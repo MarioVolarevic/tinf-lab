@@ -1,0 +1,9 @@
+Izvorište: p(a) = 0.2, p(b) = 0.2, p(c) = 0.6
+Metoda entropijskog kodiranja: Shannon-Fanoovo
+Metoda zaštitnog kodiranja: Parni paritet
+Kanal: Vjerojatnost pogreške bita p = 1/10
+
+Kod:
+c=0
+a=10
+b=11
