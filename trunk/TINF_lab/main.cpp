@@ -19,15 +19,15 @@ void izvoriste(char* niz)
 }
 
 
-
-void sf(int d, int g, char** a)//prvo donja 0, gornja 6
+void sf(int d, int g, char** k) //testirao na primjeru iz slajdova i radilo je
+								//d - donja granica, g - gornja granica, k - niz kodova
 {
-	float p[] = {0.3,0.2,0.2,0.1,0.1,0.1};
+	float p[] = {0.6,0.2,0.2};
+	char* temps;
 	int i;
 	int db=d;
-	char* test = a[1];
 	float zb=0;
-	int j;
+	int j;	
 	if (g-d == 1) return;
 	for (d;d<g;d++)
 	{
@@ -42,28 +42,65 @@ void sf(int d, int g, char** a)//prvo donja 0, gornja 6
 	}
 	for (d=db; d<i;d++)
 	{
-		*a=(char*) malloc(sizeof(char)*(strlen(a[d])+1));
-		//a[d]=(char*) realloc(&a[d],sizeof(char)*(strlen(a[d])+1));
-		a[d]="1";
+		temps = (char*) malloc(strlen(k[d]) + 1);
+		strcpy(temps,k[d]);
+		strcat(temps,"0");
+		k[d] =(char*) malloc(strlen(k[d]) + 1);
+		strcpy(k[d],temps);
 	}
 	int x;
 	for (x = i; x < g;x++)
 	{
-		a[x]=(char*) malloc(sizeof(char)*(strlen(a[x])+1));
-		strcat(a[x],"0");
+		temps = (char*) malloc(strlen(k[x]) + 1);
+		strcpy(temps,k[x]);
+		strcat(temps,"1");
+		k[x] =(char*) malloc(strlen(k[x]) + 1);
+		strcpy(k[x],temps);
 	}
-	sf(db,i,a);
-	sf(i,g,a);
+	sf(db,i,k);
+	sf(i,g,k);
 }
-void ent_kod_sf(char* niz, char** kod)
+//void ent_kod_sf(char* simboli, char** kod_niz)
+char* ent_kod_sf(char* simboli)
 {
-	sf(0,6,kod);
+	char* kod_niz;
+	char* kod[3] = {"","",""};
+	sf(0,3,kod);
+	int brc = 0,brb = 0,bra = 0;
+	for (int i = 0;i<10000;i++)
+	{
+		switch (simboli[i])
+		{
+		case 'a':bra++;
+			break;
+		case 'b':brb++;
+			break;
+		case 'c':brc++;
+			break;
+		}
+	}
+	kod_niz = (char*)malloc (strlen(kod[0])*brc+strlen(kod[1])*brb+strlen(kod[2])*bra);
+	kod_niz[0] = 0;
+	for (int i = 0;i<10000;i++)
+	{
+		switch (simboli[i])
+		{
+		case 'a':strcat(kod_niz,kod[2]);
+			break;
+		case 'b':strcat(kod_niz,kod[1]);
+			break;
+		case 'c':strcat(kod_niz,kod[0]);
+			break;
+		}
+	}
+	int x = strlen(kod_niz);
+	return kod_niz;
 }
 int main()
 {
-	char slijed_sim [10000];
-	char* kodirani_niz[6] = {"b","b","b","b","b","b"};
-	izvoriste(slijed_sim);
-	ent_kod_sf(slijed_sim, kodirani_niz);
+	char slijed_simbola [10000];
+	char* kodirani_niz;
+	izvoriste(slijed_simbola); //generiranje simbola
+	kodirani_niz = ent_kod_sf(slijed_simbola); //entropijsko kodiranje koristeci sf
 	return 1;
 }
