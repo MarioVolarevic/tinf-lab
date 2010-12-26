@@ -11,9 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4BE13DA7-F538-467F-829F-4F93962A444D}</ProjectGuid>
-    <RootNamespace>TINF_lab</RootNamespace>
-    <ProjectName>izvoriste</ProjectName>
+    <ProjectGuid>{F3B6A9B7-ABA0-47DF-8F37-E2910694CBA5}</ProjectGuid>
+    <RootNamespace>ent_koder_sf</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -61,7 +60,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="izvoriste.cpp" />
+    <ClCompile Include="ent_k_sf.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
