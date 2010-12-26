@@ -3,24 +3,8 @@
 #include <time.h>
 #include <string.h>
 
-void izvoriste(char* niz)
-{
-	srand(time(NULL));
-	int n, i;
-	for (int i=0; i<10000; i++)
-	{
-		n = rand() % 10;
-		if (n >= 0 && n < 2)
-			niz[i] = 'a';
-		else if (n >= 2 && n < 4)
-			niz[i] = 'b';
-		else niz[i] = 'c';
-	}
-}
-
-
 void sf(int d, int g, char** k) //testirao na primjeru iz slajdova i radilo je
-								//d - donja granica, g - gornja granica, k - niz kodova
+	//d - donja granica, g - gornja granica, k - niz kodova
 {
 	float p[] = {0.6,0.2,0.2};
 	char* temps;
@@ -60,9 +44,17 @@ void sf(int d, int g, char** k) //testirao na primjeru iz slajdova i radilo je
 	sf(db,i,k);
 	sf(i,g,k);
 }
-//void ent_kod_sf(char* simboli, char** kod_niz)
-char* ent_kod_sf(char* simboli)
+
+void ent_kod_sf()
 {
+	char* simboli;
+	simboli = (char*)malloc (10001*sizeof(char));
+	FILE *pFileR;
+	pFileR = fopen("12.txt","r");
+	fscanf(pFileR,"%s",simboli);
+	fclose(pFileR);
+
+	FILE *pFileW;
 	char* kod_niz;
 	char* kod[3] = {"","",""};
 	sf(0,3,kod);
@@ -80,7 +72,7 @@ char* ent_kod_sf(char* simboli)
 		}
 	}
 	kod_niz = (char*)malloc (strlen(kod[0])*brc+strlen(kod[1])*brb+strlen(kod[2])*bra);
-	kod_niz[0] = 0;
+	*(kod_niz) = 0;
 	for (int i = 0;i<10000;i++)
 	{
 		switch (simboli[i])
@@ -93,14 +85,13 @@ char* ent_kod_sf(char* simboli)
 			break;
 		}
 	}
-	int x = strlen(kod_niz);
-	return kod_niz;
+	pFileW = fopen("23.txt","w");
+	fprintf(pFileW,kod_niz);
+	fclose(pFileW);
 }
+
 int main()
 {
-	char slijed_simbola [10000];
-	char* kodirani_niz;
-	izvoriste(slijed_simbola); //generiranje simbola
-	kodirani_niz = ent_kod_sf(slijed_simbola); //entropijsko kodiranje koristeci sf
-	return 1;
+	ent_kod_sf(); //entropijsko kodiranje koristeci sf
+	return 0;
 }
