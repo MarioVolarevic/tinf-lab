@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4BE13DA7-F538-467F-829F-4F93962A444D}</ProjectGuid>
     <RootNamespace>TINF_lab</RootNamespace>
-    <ProjectName>izvoriste</ProjectName>
+    <ProjectName>izvor</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
