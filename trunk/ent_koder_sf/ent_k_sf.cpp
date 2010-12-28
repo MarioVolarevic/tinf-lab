@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
 
 void sf(int d, int g, char** k) //testirao na primjeru iz slajdova i radilo je

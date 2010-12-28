@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TINF_lab", "TINF_lab.vcxproj", "{4BE13DA7-F538-467F-829F-4F93962A444D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "izvoriste", "TINF_lab.vcxproj", "{4BE13DA7-F538-467F-829F-4F93962A444D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ent_koder_sf", "..\ent_koder_sf\ent_koder_sf.vcxproj", "{F3B6A9B7-ABA0-47DF-8F37-E2910694CBA5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zast_koder_par", "..\zast_koder_par\zast_koder_par.vcxproj", "{216399B4-E734-47C4-8A59-75EEF5046FC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{F3B6A9B7-ABA0-47DF-8F37-E2910694CBA5}.Debug|Win32.Build.0 = Debug|Win32
 		{F3B6A9B7-ABA0-47DF-8F37-E2910694CBA5}.Release|Win32.ActiveCfg = Release|Win32
 		{F3B6A9B7-ABA0-47DF-8F37-E2910694CBA5}.Release|Win32.Build.0 = Release|Win32
+		{216399B4-E734-47C4-8A59-75EEF5046FC9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{216399B4-E734-47C4-8A59-75EEF5046FC9}.Debug|Win32.Build.0 = Debug|Win32
+		{216399B4-E734-47C4-8A59-75EEF5046FC9}.Release|Win32.ActiveCfg = Release|Win32
+		{216399B4-E734-47C4-8A59-75EEF5046FC9}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
