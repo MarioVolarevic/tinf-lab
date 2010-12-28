@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{216399B4-E734-47C4-8A59-75EEF5046FC9}</ProjectGuid>
     <RootNamespace>zast_koder_par</RootNamespace>
+    <ProjectName>z_kod</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
