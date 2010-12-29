@@ -4,6 +4,7 @@
 
 void paritetni_koder() //dodaje paritetni bit na kraj
 {
+	int brb = 0;
 	FILE *pFileR = fopen("23.txt","r");
 	FILE *pFileW = fopen("34.txt","w");
 	while (!feof(pFileR))
@@ -19,9 +20,11 @@ void paritetni_koder() //dodaje paritetni bit na kraj
 		if (brj % 2 == 0) strcat(blok,"0");
 		else strcat(blok,"1");
 		fprintf(pFileW,"%s",blok);
+		brb++;
 	}
 	fclose(pFileR);
 	fclose(pFileW);
+	printf("\nGenerirano %d blokova\n",brb);
 }
 
 

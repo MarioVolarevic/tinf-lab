@@ -44,38 +44,49 @@ void sf(int d, int g, char** k) //testirao na primjeru iz slajdova i radilo je
 	sf(i,g,k);
 }
 
-void ent_kod_sf()
+void ent_dekod_sf()
 {
-	char simbol;
+	char bit[2] = {""};
 	char* kod[3] = {"","",""};
 	sf(0,3,kod);
-	int brb = 0;
+	int brzn = 0, brb = 0;
 	FILE *pFileR;
 	FILE *pFileW;
-	pFileR = fopen("12.txt","r");
-	pFileW = fopen("23.txt","w");
+	pFileR = fopen("56.txt","r");
+	pFileW = fopen("67.txt","w");
 	while (1)
 	{
-		fscanf(pFileR,"%c",&simbol);
+		char kodf[3]={""};
+		fscanf(pFileR,"%c",bit);
 		if (feof(pFileR)) break;
-		switch (simbol)
+		brb++;
+		strcat(kodf,bit);
+		if (!strcmp(kodf, kod[0])) {
+			fprintf(pFileW,"%c",'c');
+			brzn++;
+		}
+		else 
 		{
-		case 'a':{fprintf(pFileW,"%s",kod[2]); brb+=2;
-			break;}
-		case 'b':{fprintf(pFileW,"%s",kod[1]); brb+=2;
-			break;}
-		case 'c':{fprintf(pFileW,"%s",kod[0]); brb++;
-			break;}
+			fscanf(pFileR,"%c",bit);	//kod[0] = c, kod[1] = b, kod[2] = a
+			brb++;
+			strcat(kodf,bit);
+			if (!strcmp(kodf, kod[1])){
+				fprintf(pFileW,"%c",'b');
+				brzn++;
+			}
+			else if (!strcmp(kodf, kod[2])){
+				fprintf(pFileW,"%c",'a');
+				brzn++;
+			}
 		}
 	}
 	fclose(pFileR);
 	fclose(pFileW);
-	printf("\nKodirano je 10000 simbola sa %d bitova\n",brb);
-
+	printf("\nDekodirano %d/10000 znakova, koristeno %d bitova\n",brzn,brb);
 }
 
 int main()
 {
-	ent_kod_sf(); //entropijsko kodiranje koristeci sf
+	ent_dekod_sf(); //entropijsko kodiranje koristeci sf
 	return 0;
 }
