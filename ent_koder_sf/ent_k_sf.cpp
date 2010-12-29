@@ -70,12 +70,13 @@ void ent_kod_sf()
 	}
 	fclose(pFileR);
 	fclose(pFileW);
-	printf("\nKodirano je 10000 simbola sa %d bitova\n",brb);
+	printf("\n10000 simbola je kodirano sa %d bitova\n",brb);
 
 }
 
 int main()
 {
+	printf("\nIme grupe: NSK24\nVarijanta 1: Shannon-Fanoovo kodiranje\n");
 	ent_kod_sf(); //entropijsko kodiranje koristeci sf
 	return 0;
 }

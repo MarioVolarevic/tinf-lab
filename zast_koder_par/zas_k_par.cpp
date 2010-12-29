@@ -4,7 +4,7 @@
 
 void paritetni_koder() //dodaje paritetni bit na kraj
 {
-	int brb = 0;
+	int brb = 0, brbit = 0;
 	FILE *pFileR = fopen("23.txt","r");
 	FILE *pFileW = fopen("34.txt","w");
 	while (!feof(pFileR))
@@ -20,16 +20,18 @@ void paritetni_koder() //dodaje paritetni bit na kraj
 		if (brj % 2 == 0) strcat(blok,"0");
 		else strcat(blok,"1");
 		fprintf(pFileW,"%s",blok);
+		brbit+=strlen(blok);
 		brb++;
 	}
 	fclose(pFileR);
 	fclose(pFileW);
-	printf("\nGenerirano %d blokova\n",brb);
+	printf("\nGenerirano %d blokova pomocu %d bitova\n",brb,brbit);
 }
 
 
 int main()
 {
+	printf("\nIme grupe: NSK24\nVarijanta 1: Parni paritet\n");
 	paritetni_koder(); 
 	return 0;
 }

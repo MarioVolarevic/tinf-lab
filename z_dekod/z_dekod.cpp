@@ -24,7 +24,7 @@ void paritetni_dek() //dodaje paritetni bit na kraj
 		else strncpy(blokn,blok,strlen(blok)-1);
 		fprintf(pFileW,"%s",blokn);
 	}
-	printf("\nbroj detektiranih gresaka/broj blokova: %d/%d\n",brg,brb);
+	printf("\nOmjer detektirane greske/broj blokova: %d/%d\n",brg,brb);
 
 	fclose(pFileR);
 	fclose(pFileW);
@@ -33,6 +33,7 @@ void paritetni_dek() //dodaje paritetni bit na kraj
 
 int main()
 {
+	printf("\nIme grupe: NSK24\nVarijanta 1: Parni paritet\n");
 	paritetni_dek(); 
 	return 0;
 }

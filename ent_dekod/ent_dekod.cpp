@@ -82,11 +82,12 @@ void ent_dekod_sf()
 	}
 	fclose(pFileR);
 	fclose(pFileW);
-	printf("\nDekodirano %d/10000 znakova, koristeno %d bitova\n",brzn,brb);
+	printf("\nUcitano %d bitova\nDekodirano %d/10000 simbola\n",brzn,brb);
 }
 
 int main()
 {
-	ent_dekod_sf(); //entropijsko kodiranje koristeci sf
+	printf("\nIme grupe: NSK24\nVarijanta 1: Shannon-Fanoovo kodiranje\n");
+	ent_dekod_sf(); 
 	return 0;
 }

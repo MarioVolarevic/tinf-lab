@@ -6,4 +6,4 @@ gen_vek_pogreske.exe -s
 kanal.exe
 z_dekod.exe
 ent_dekod.exe
-pause
+rem pause
