@@ -21,9 +21,11 @@ void use_err_vec()
 	fclose(pFileR1);
 	fclose(pFileR2);
 	fclose(pFileW);
+	printf("\nerr_vec.txt primijenjen na 34.txt\n");
 }
 int main()
 {
+	printf("\nIme grupe: NSK24\nVarijanta 1: p(greske) = 1/10\n");
 	use_err_vec();
 	return 0;
 }
