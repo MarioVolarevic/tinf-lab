@@ -21,6 +21,7 @@ void izvoriste()
 	pFile = fopen("12.txt","w");
 	fprintf(pFile,niz);
 	fclose(pFile);
+	printf("\nGenerirano 10000 simbola\n");
 }
 
 
