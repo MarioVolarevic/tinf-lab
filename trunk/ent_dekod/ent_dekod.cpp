@@ -82,7 +82,7 @@ void ent_dekod_sf()
 	}
 	fclose(pFileR);
 	fclose(pFileW);
-	printf("\nUcitano %d bitova\nDekodirano %d/10000 simbola\n",brzn,brb);
+	printf("\nUcitano %d bitova\nDekodirano %d/10000 simbola\n",brb,brzn);
 }
 
 int main()
