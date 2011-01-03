@@ -2,9 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-void paritetni_dek() //dodaje paritetni bit na kraj
+void paritetni_dek(char* ime_dat) //dodaje paritetni bit na kraj
 {
-	FILE *pFileR = fopen("45.txt","r");
+	//FILE *pFileR = fopen("45.txt","r");
+	FILE *pFileR = fopen(ime_dat,"r");
+	if (pFileR == NULL) {
+		printf("\nNije nadena datoteka\n");
+		exit(1);
+	}
 	FILE *pFileW = fopen("56.txt","w");
 	int brg = 0, brb = 0;
 
@@ -32,9 +37,10 @@ void paritetni_dek() //dodaje paritetni bit na kraj
 }
 
 
-int main()
+int main(int argc, char * argv[])
 {
 	printf("\nIme grupe: NSK24\nVarijanta 1: Parni paritet\n");
-	paritetni_dek(); 
+	if (argc == 2) paritetni_dek(argv[argc-1]); //entropijsko kodiranje koristeci sf	
+	else printf("\nNije unesen dovoljan broj argumenata, prihvaca se samo ime ulazne datoteke\n");
 	return 0;
 }

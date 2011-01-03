@@ -44,7 +44,7 @@ void sf(int d, int g, char** k) //testirao na primjeru iz slajdova i radilo je
 	sf(i,g,k);
 }
 
-void ent_kod_sf()
+void ent_kod_sf(char* ime_dat)
 {
 	char simbol;
 	char* kod[3] = {"","",""};
@@ -52,7 +52,12 @@ void ent_kod_sf()
 	int brb = 0;
 	FILE *pFileR;
 	FILE *pFileW;
-	pFileR = fopen("12.txt","r");
+	//pFileR = fopen("12.txt","r");
+	pFileR = fopen(ime_dat,"r");
+	if (pFileR == NULL) {
+		printf("\nNije nadena datoteka\n");
+		exit(1);
+	}
 	pFileW = fopen("23.txt","w");
 	while (1)
 	{
@@ -74,9 +79,10 @@ void ent_kod_sf()
 
 }
 
-int main()
+int main(int argc, char * argv[])
 {
 	printf("\nIme grupe: NSK24\nVarijanta 1: Shannon-Fanoovo kodiranje\n");
-	ent_kod_sf(); //entropijsko kodiranje koristeci sf
+	if (argc == 2) ent_kod_sf(argv[argc-1]); //entropijsko kodiranje koristeci sf	
+	else printf("\nNije unesen dovoljan broj argumenata, prihvaca se samo ime ulazne datoteke\n");
 	return 0;
 }
