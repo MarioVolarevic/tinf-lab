@@ -11,6 +11,10 @@ void gen_err()
 
 	srand(time(NULL));
 	FILE *pFileR = fopen("34.txt","r");
+	if (pFileR == NULL) {
+		printf("\nNije nadena datoteka\n");
+		exit(1);
+	}
 	FILE *pFileW = fopen("err_vec.txt","w");
 	while (1)
 	{

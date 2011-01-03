@@ -2,10 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-void paritetni_koder() //dodaje paritetni bit na kraj
+void paritetni_koder(char* ime_dat) //dodaje paritetni bit na kraj
 {
 	int brb = 0, brbit = 0;
-	FILE *pFileR = fopen("23.txt","r");
+	//FILE *pFileR = fopen("23.txt","r");
+	FILE *pFileR = fopen(ime_dat,"r");
+	if (pFileR == NULL) {
+		printf("\nNije nadena datoteka\n");
+		exit(1);
+	}
 	FILE *pFileW = fopen("34.txt","w");
 	while (1)
 	{
@@ -29,9 +34,10 @@ void paritetni_koder() //dodaje paritetni bit na kraj
 }
 
 
-int main()
+int main(int argc, char * argv[])
 {
 	printf("\nIme grupe: NSK24\nVarijanta 1: Parni paritet\n");
-	paritetni_koder(); 
+	if (argc == 2) paritetni_koder(argv[argc-1]); 
+	else printf("\nNije unesen dovoljan broj argumenata, prihvaca se samo ime ulazne datoteke\n");
 	return 0;
 }
