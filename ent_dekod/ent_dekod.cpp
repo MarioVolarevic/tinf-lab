@@ -73,6 +73,7 @@ void ent_dekod_sf(char* ime_dat)
 		else 
 		{
 			fscanf(pFileR,"%c",bit);	//kod[0] = c, kod[1] = b, kod[2] = a
+			if (feof(pFileR)) break;
 			brb++;
 			strcat(kodf,bit);
 			if (!strcmp(kodf, kod[1])){
