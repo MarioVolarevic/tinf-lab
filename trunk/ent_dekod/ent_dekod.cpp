@@ -53,7 +53,6 @@ void ent_dekod_sf(char* ime_dat)
 	int na = 0, nb = 0, nc = 0;
 	FILE *pFileR;
 	FILE *pFileW;
-	//pFileR = fopen("56.txt","r");
 	pFileR = fopen(ime_dat,"r");
 	if (pFileR == NULL) {
 		printf("\nNije nadena datoteka\n");
@@ -99,7 +98,7 @@ void ent_dekod_sf(char* ime_dat)
 int main(int argc, char* argv[])
 {
 	printf("\nIme grupe: NSK24\nVarijanta 1: Shannon-Fanoovo kodiranje\n");
-	if (argc == 2) ent_dekod_sf(argv[argc-1]); //entropijsko kodiranje koristeci sf	
+	if (argc == 2) ent_dekod_sf(argv[argc-1]); //entropijsko dekodiranje koristeci sf	
 	else printf("\nNije unesen dovoljan broj argumenata, prihvaca se samo ime ulazne datoteke\n");
 	return 0;
 }
