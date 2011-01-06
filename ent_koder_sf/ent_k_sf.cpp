@@ -52,7 +52,6 @@ void ent_kod_sf(char* ime_dat)
 	int brb = 0;
 	FILE *pFileR;
 	FILE *pFileW;
-	//pFileR = fopen("12.txt","r");
 	pFileR = fopen(ime_dat,"r");
 	if (pFileR == NULL) {
 		printf("\nNije nadena datoteka\n");

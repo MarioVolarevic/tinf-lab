@@ -5,7 +5,6 @@
 void paritetni_koder(char* ime_dat) //dodaje paritetni bit na kraj
 {
 	int brb = 0, brbit = 0;
-	//FILE *pFileR = fopen("23.txt","r");
 	FILE *pFileR = fopen(ime_dat,"r");
 	if (pFileR == NULL) {
 		printf("\nNije nadena datoteka\n");
@@ -15,7 +14,7 @@ void paritetni_koder(char* ime_dat) //dodaje paritetni bit na kraj
 	while (1)
 	{
 		int brj = 0;
-		char blok[9] = {""};	//neka privremeno velicina bloka bude 8, to je 7 podatkovnih i 1 zastitni, s tim da je zadnji velicine onoliko koliko ostane
+		char blok[9] = {""};	//neka velicina bloka bude 8, to je 7 podatkovnih i 1 zastitni, s tim da se zadnji odbacuje ako nije djeljivo
 		fscanf(pFileR,"%7c",blok);
 		if (feof(pFileR)) break;
 		for (int i = 0; i < strlen(blok); i++)
