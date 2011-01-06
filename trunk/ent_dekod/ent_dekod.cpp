@@ -50,6 +50,7 @@ void ent_dekod_sf(char* ime_dat)
 	char* kod[3] = {"","",""};
 	sf(0,3,kod);
 	int brzn = 0, brb = 0;
+	int na = 0, nb = 0, nc = 0;
 	FILE *pFileR;
 	FILE *pFileW;
 	//pFileR = fopen("56.txt","r");
@@ -68,6 +69,7 @@ void ent_dekod_sf(char* ime_dat)
 		strcat(kodf,bit);
 		if (!strcmp(kodf, kod[0])) {
 			fprintf(pFileW,"%c",'c');
+			nc++;
 			brzn++;
 		}
 		else 
@@ -79,19 +81,22 @@ void ent_dekod_sf(char* ime_dat)
 			if (!strcmp(kodf, kod[1])){
 				fprintf(pFileW,"%c",'b');
 				brzn++;
+				nb++;
 			}
 			else if (!strcmp(kodf, kod[2])){
 				fprintf(pFileW,"%c",'a');
 				brzn++;
+				na++;
 			}
 		}
 	}
 	fclose(pFileR);
 	fclose(pFileW);
 	printf("\nUcitano %d bitova\nDekodirano %d/10000 simbola\n",brb,brzn);
+	printf("\nbroj a = %d\nbroj b = %d\nbroj c = %d\n",na,nb,nc);
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
 	printf("\nIme grupe: NSK24\nVarijanta 1: Shannon-Fanoovo kodiranje\n");
 	if (argc == 2) ent_dekod_sf(argv[argc-1]); //entropijsko kodiranje koristeci sf	

@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char inverzija(char b)
+{
+	if (b=='0') b='1';
+	else if (b=='1') b='0';
+	return b;
+}
 
 void use_err_vec(char* ime_dat, char* vek_gr_dat)
 {
 	char bit, err_b;
-	int b, e_b;
-	//FILE *pFileR1 = fopen("34.txt","r");
-	//FILE *pFileR2 = fopen("err_vec.txt","r");
 	FILE *pFileR1 = fopen(ime_dat,"r");
 	FILE *pFileR2 = fopen(vek_gr_dat,"r");
 	if (pFileR1 == NULL || pFileR2 == NULL) {
@@ -17,12 +20,12 @@ void use_err_vec(char* ime_dat, char* vek_gr_dat)
 	FILE *pFileW = fopen("45.txt","w");
 	while (1)
 	{
+		char bit, err_b;
 		fscanf(pFileR1,"%c",&bit);
 		fscanf(pFileR2,"%c",&err_b);
 		if (feof(pFileR1) || feof(pFileR2)) break;
-		b = atoi(&bit);
-		if (err_b == '1') b = !b; //zbog neceg xor nije radio kad prebacim compile na release pa zato radim inverziju ovako
-		fprintf(pFileW,"%d",b);
+		if (err_b == '1') bit = inverzija(bit); //zbog neceg xor nije radio kad prebacim compile na release pa zato radim inverziju ovako
+		fprintf(pFileW,"%c",bit);
 	}
 	fclose(pFileR1);
 	fclose(pFileR2);

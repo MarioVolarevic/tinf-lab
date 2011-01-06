@@ -4,13 +4,13 @@
 #include <string.h>
 
 
-void gen_err()
+void gen_err(char * ime_dat)
 {
 	int n,br=0,bru=0;
 	char bit;	
 
 	srand(time(NULL));
-	FILE *pFileR = fopen("34.txt","r");
+	FILE *pFileR = fopen(ime_dat,"r");
 	if (pFileR == NULL) {
 		printf("\nNije nadena datoteka\n");
 		exit(1);
@@ -29,11 +29,16 @@ void gen_err()
 	fclose(pFileR);
 	fclose(pFileW);
 }
-void gen_zer()
+void gen_zer(char * ime_dat)
 {
 	char bit;	
 
-	FILE *pFileR = fopen("34.txt","r");
+	FILE *pFileR = fopen(ime_dat,"r");
+	if (pFileR == NULL) {
+		printf("\nNije nadena datoteka\n");
+		exit(1);
+	}
+
 	FILE *pFileW = fopen("err_vec.txt","w");
 	while (1)
 	{
@@ -47,8 +52,12 @@ void gen_zer()
 }
 int main(int argc, char * argv[])
 {
-	if (!strcmp(argv[argc-1], "-s")) gen_err();
-	else if (!strcmp(argv[argc-1], "-b")) gen_zer();
-	else printf("\nArgument -s za vektor s greskama ili -b za vektor bez gresaka\n");
+	if (argc == 3)
+	{
+		if (!strcmp(argv[argc-1], "-s")) gen_err(argv[argc-2]);
+		else if (!strcmp(argv[argc-1], "-b")) gen_zer(argv[argc-2]);
+		else printf("\nArgument -s za vektor s greskama ili -b za vektor bez gresaka\n");
+	}
+	else printf("\nNije unesen dovoljan broj argumenata, prihvacaju se samo ime ulazne datoteke i opcija\n");
 	return 0;
 }
